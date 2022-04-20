@@ -107,7 +107,9 @@ public class ejercicios3pdf2 {
      public static void main(String[] args){
          double horasTrabajadas;
          double tarifa;
+         double tarifaExtra;
          double sueldo;
+         double sueldoExtra;
        Scanner leerHorasTrabajadas = new Scanner(System.in);
        Scanner leerTarifa = new Scanner(System.in);
        System.out.println("Indique las horas trabajadas:");
@@ -115,12 +117,16 @@ public class ejercicios3pdf2 {
        System.out.println("Indique la tarifa:");
        tarifa = leerTarifa.nextInt();
        if(horasTrabajadas>40){
-           tarifa = tarifa*1.5;
-           sueldo = tarifa * horasTrabajadas;
-           System.out.println("Su salario sera de: "+ (int)sueldo);
+           
+           tarifaExtra = tarifa*1.5;
+           sueldoExtra = tarifaExtra * (horasTrabajadas-40);
+           System.out.println("Su salario sera de: "+ (sueldoExtra+(40*tarifa)));
        }
-       sueldo = tarifa*horasTrabajadas;
-       System.out.println("Su salario sera de : "+ sueldo );
+       else{
+           sueldo = tarifa*horasTrabajadas;
+            System.out.println("Su salario sera de : "+ sueldo );
+       }
+       
        
      
     }
